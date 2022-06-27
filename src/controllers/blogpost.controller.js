@@ -12,7 +12,22 @@ const getBlogPosts = async (_request, response) => {
   return response.status(200).json(blogPosts);
 };
 
+const getBlogPostsById = async (request, response) => {
+  const { id } = request.params;
+
+  const postById = await blogPostService.getById(id);
+
+  if (!postById) {
+    return response.status(404).json({
+      message: 'Post does not exist',
+    });
+  }
+  
+  return response.status(200).json(postById);
+};
+
 module.exports = {
   createBlogPost,
   getBlogPosts,
+  getBlogPostsById,
 };
