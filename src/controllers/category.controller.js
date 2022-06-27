@@ -8,10 +8,9 @@ const createCategory = async (request, response) => {
       message: '"name" is required',
     });
   }
-  console.log('name category', name);
 
   const categoryCreated = await categoryService.createCategory({ name });
-  console.log(categoryCreated);
+  
   return response.status(201).json(categoryCreated);
 };
 
