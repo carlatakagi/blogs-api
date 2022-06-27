@@ -19,5 +19,6 @@ router.post('/categories', tokenValidation, categoryController.createCategory);
 
 router.get('/user', tokenValidation, userController.getUser);
 router.get('/user/:id', tokenValidation, userController.getUserById);
+router.get('/categories', tokenValidation, categoryController.getCategories);
 
 module.exports = router;
