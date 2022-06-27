@@ -23,5 +23,6 @@ router.get('/user', tokenValidation, userController.getUser);
 router.get('/user/:id', tokenValidation, userController.getUserById);
 router.get('/categories', tokenValidation, categoryController.getCategories);
 router.get('/post', tokenValidation, blogPostController.getBlogPosts);
+router.get('/post/:id', tokenValidation, blogPostController.getBlogPostsById);
 
 module.exports = router;
